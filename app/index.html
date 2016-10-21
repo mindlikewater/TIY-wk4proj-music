@@ -10,6 +10,18 @@
   <body>
     <div class="jukebox">
       <h1>Ear Candy: Find Your Jam!</h1>
+      <audio controls="controls">
+      </audio>
+      <figcaption>Now Playing: </figcaption>
+      <div class="searchbox">
+        <form action= "/searchbar">
+          <input type="text" class="search" name="search" placeholder="Music Search"/>
+          <input type="submit" class="submit" value="search"/>
+        </form>
+      </div>
+      <div class="search-results">
+        Search Results (click one):
+      </div>
     </div>
     <script src="js/bundle.js"></script>
   </body>

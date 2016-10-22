@@ -25,16 +25,17 @@ function getSongData (searchString) {
 };
 
 function extractData (searchString) {
-  var searchData = searchString.map(function (track) {
-    artwork = track.artwork_url;
-    labelName = track.label_name;
-    releaseYr = track.release_year;
-    title = track.title;
-    genre = track.genre;
-    api_link = track.uri;
-
-    return searchData;
+  searchString.map(function (track) {
+    var searchData = {
+      artwork: track.artwork_url,
+      labelName: track.label_name,
+      releaseYr: track.release_year,
+      title: track.title,
+      genre: track.genre,
+      api_link: track.uri
+    }
   });
+  return searchData;
 };
 
 //sorts the song data alphabetically and returns the results in an array

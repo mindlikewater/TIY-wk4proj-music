@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soundcloud Music App</title>
     <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Aladin" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=BioRhyme+Expanded" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
     <div class="jukebox">
       <h1>Ear Candy: Find Your Jam!</h1>
-      <audio controls="controls">
-      </audio>
-      <figcaption>Now Playing: </figcaption>
+      <div id="player">
+        <audio controls="controls"></audio>
+        <figcaption id="currentsong">Now Playing: </figcaption>
+      </div>
       <div class="searchbox">
         <form>
           <input type="text" id="search" placeholder="Artist or Song Title"/>
@@ -20,7 +23,6 @@
         </form>
       </div>
       <div class="search-results">
-        Search Results (click one):
       </div>
     </div>
     <script src="js/bundle.js"></script>

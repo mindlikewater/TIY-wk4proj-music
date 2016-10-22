@@ -1,3 +1,30 @@
-jukebox {
+* {
+  font-family: 'BioRhyme Expanded', serif;
+}
+
+body {
+  background-image: url("https://source.unsplash.com/category/nature");
+}
+
+.jukebox {
   text-align: center;
+  h1 {
+    font-family: 'Aladin', cursive;
+   text-align: center;
+   color: red;
+   font-size: 42px;
+ }
+}
+
+figcaption {
+  text-align: left;
+  margin-left: 36%;
+  font-size: 12px;
+  color: #C3E4ED;
+  padding-bottom: 40px;
+}
+
+.search-results {
+  color: #C3E4ED;
+  padding-top: 40px;
 }

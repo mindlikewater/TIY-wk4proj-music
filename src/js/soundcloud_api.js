@@ -24,18 +24,22 @@ function getSongData (searchString) {
   });
 };
 
-function extractData (searchString) {
-  searchString.map(function (track) {
-    var searchData = {
-      artwork: track.artwork_url,
-      labelName: track.label_name,
-      releaseYr: track.release_year,
-      title: track.title,
-      genre: track.genre,
-      api_link: track.uri
-    }
-  });
-  return searchData;
+function extractData (track) {
+  var artwork = track.artwork_url;
+  var labelName = track.label_name;
+  var releaseYr = track.release_year;
+  var title = track.title;
+  var genre = track.genre;
+  var trackLink = track.uri;
+
+  return {
+    artwork: artwork,
+    label: labelName,
+    release: releaseYr,
+    title: title,
+    genre: genre,
+    trackLink: trackLink
+  };
 };
 
 //sorts the song data alphabetically and returns the results in an array

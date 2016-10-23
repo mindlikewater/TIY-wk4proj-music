@@ -1,9 +1,11 @@
 import $ from 'jquery';
 
+import SC_ID from './token';
+
 //creates html for each individual song
 function songTemplate (track) {
   return `
-    <div class="songbox" audio="${track.trackLink}" format="${track.format}">
+    <div class="songbox" data-tracklink="${track.trackLink}" data-format="${track.format}" data-title="${track.title}">
       <image class="artwork" src="${track.artwork}">
       <div class="title">Artist/Title: ${track.title}</div>
       <div class="genre">${track.genre}</div>
@@ -21,15 +23,18 @@ function resultsTemplate (tracksHTML) {
 
 //updates the music player with the user's choice after user selects a song from the results list
 function play (event) {
-  console.log(event.currentTarget.dataset);
   var jukeboxHTML = `
     <audio controls="controls">
-      <source src="${event.currentTarget.dataset.trackLink}" type="audio/${event.currentTarget.dataset.format}">
-    </audio>
-    <div id=$("#currentsong").append.${event.currentTarget.dataset.title}
-    </div>`;
+      <source src="${event.currentTarget.dataset.tracklink}?client_id=${SC_ID}" type="audio/${event.currentTarget.dataset.format}">
+    </audio>`;
 
-  $(".player").html(jukeboxHTML);
+  var currentHTML = `
+    <div id="currentsong">${event.currentTarget.dataset.title}</div>`;
+
+  console.log(event.currentTarget.dataset);
+  console.log(jukeboxHTML);
+  $(".controls").append(jukeboxHTML);
+  $(".currentsong").append(currentHTML);
 };
 
 //export functions to main.js

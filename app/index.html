@@ -11,17 +11,26 @@
   </head>
   <body>
     <div class="jukebox">
-      <h1>Ear Candy: Find Your Jam!</h1>
+      <h1 class="shadow">Ear Candy: Find Your Jam!</h1>
       <div id="player">
         <audio controls="controls"></audio>
         <figcaption id="currentsong">Now Playing: </figcaption>
       </div>
       <div class="searchbox">
         <form>
-          <input type="text" id="search" placeholder="Artist or Song Title"/>
-          <button id="submit">Tune In</button>
+          <input type="text" id="search" placeholder="Artist, Song, or Genre"/>
+          <button class="round" id="submit">
+            Tune In
+            <div class="ring1"></div>
+            <div class="ring2"></div>
+            <div class="ring3"></div>
+            <div class="ring4"></div>
+            <div class="ring5"></div>
+            <div class="circle"></div>
+          </button>
         </form>
       </div>
+      <h2 class="search-title">Search Results (click one):</h2>
       <div class="search-results">
       </div>
     </div>

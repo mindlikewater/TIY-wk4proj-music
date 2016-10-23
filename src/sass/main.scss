@@ -1,30 +1,182 @@
+//create a square box
+@mixin square($size) {
+  width: $size;
+  height: $size;
+  float: left;
+}
+
+$indigo: #2E0854;
+
 * {
   font-family: 'BioRhyme Expanded', serif;
+  text-decoration: none;
 }
 
 body {
-  background-image: url("https://source.unsplash.com/category/nature");
+  background-image: url(../../images/keysInClouds.jpg);
+  padding-left: 26px;
 }
 
 .jukebox {
-  text-align: center;
   h1 {
-    font-family: 'Aladin', cursive;
-   text-align: center;
-   color: red;
-   font-size: 42px;
+    font-family: 'Aladin';
+    color: white;
+    font-size: 56px;
+    text-align: center;
+    text-shadow:
+      1px 1px $indigo,
+      2px 2px $indigo,
+      3px 3px $indigo,
+      4px 4px $indigo,
+      5px 5px $indigo,
+      6px 6px $indigo,
+      7px 7px $indigo,
+      8px 8px $indigo,
+      9px 9px $indigo,
+      10px 10px $indigo;
+    -webkit-transition: 0.12s ease-out;
+    }
+  h1:hover {
+    position: relative;
+    top: -3px;
+    left: -3px;
+    color: $indigo;
+    text-shadow:
+      1px 1px #fe4902,
+      2px 2px #fe4902,
+      3px 3px #fe4902,
+      4px 4px #fe4902,
+      5px 5px #fe4902,
+      6px 6px #fe4902;
+  }
+
+  #player {
+    padding-top: 80px;
+  }
+
+ figcaption {
+   text-align: left;
+   font-size: 14px;
+   font-weight: bold;
+   color: $indigo;
+   padding-bottom: 70px;
  }
-}
 
-figcaption {
-  text-align: left;
-  margin-left: 36%;
-  font-size: 12px;
-  color: #C3E4ED;
-  padding-bottom: 40px;
-}
+ #search {
+   float: left;
+   margin-top: 20px;
+ }
 
-.search-results {
-  color: #C3E4ED;
-  padding-top: 40px;
+ .round {
+   position: relative;
+   width: 75px;
+   height: 75px;
+   font-size: 12px;
+   color: white;
+   background: black;
+   transition: .25s ease;
+   box-shadow: 2px 2px 7px rgba(0,0,0,.2);
+   border-radius: 300px;
+   border-color: #e5e5e5;
+   border-width: 4px;
+   border-style: solid;
+
+    .ring1 {
+      position: absolute;
+      top: 6%;
+      left: 6%;
+      width: 56px;
+      height: 56px;
+      z-index: 1;
+      border-radius: 300px;
+      border: 2px solid rgba(120, 120, 120, .5);
+    }
+
+    .ring2 {
+      position: absolute;
+      top: 14%;
+      left: 14%;
+      width: 46px;
+      height: 46px;
+      z-index: 1;
+      border-radius: 300px;
+      border: 2px solid rgba(120, 120, 120, .5);
+    }
+
+    .ring3 {
+      position: absolute;
+      top: 21%;
+      left: 21%;
+      width: 38px;
+      height: 38px;
+      z-index: 1;
+      border-radius: 300px;
+      border: 1px solid rgba(120, 120, 120, 1);
+    }
+
+    .ring4 {
+      position: absolute;
+      top: 28%;
+      left: 28%;
+      width: 28px;
+      height: 28px;
+      z-index: 1;
+      border-radius: 300px;
+      border: 1px solid rgba(120, 120, 120, 1);
+    }
+
+    .ring5 {
+      position: absolute;
+      top: 36%;
+      left: 36%;
+      width: 18px;
+      height: 18px;
+      z-index: 1;
+      border-radius: 300px;
+      border: 1px solid rgba(120, 120, 120, 1);
+    }
+
+    .circle {
+      position: absolute;
+      top: 41%;
+      left: 41%;
+      width: 12px;
+      height: 12px;
+      z-index: 1;
+      border-radius: 300px;
+      background: rgb(139, 174, 172);
+    }
+ }
+
+ .round:hover {
+   transform: rotate(-360deg);
+ }
+
+ .search-title {
+   font-size: 16px;
+   color: #2E0854;
+   padding-top: 100px;
+ }
+ .search-results {
+   overflow: auto;
+
+   ol {
+     margin: 0;
+   }
+
+   .songbox {
+     margin-bottom: 20px;
+     margin-right: 20px;
+     overflow: auto;
+     @include square(225px);
+     position: relative;
+     background: white;
+     text-align: center;
+     font-size: 10px;
+
+     a {
+       color: $indigo;
+     }
+   }
+ }
 }

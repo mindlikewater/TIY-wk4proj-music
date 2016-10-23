@@ -156,6 +156,7 @@ body {
  }
  .search-results {
    overflow: auto;
+   max-width: 1200px;
 
    ol {
      margin: 0;

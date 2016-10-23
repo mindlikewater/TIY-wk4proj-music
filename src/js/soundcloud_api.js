@@ -31,6 +31,10 @@ function extractData (track) {
   var trackLink = track.stream_url;
   var format = track.original_format;
 
+  if (artwork === null) {
+    artwork = "http://litbimg3.rightinthebox.com/images/190x190/201606/cneulh1466565381280.jpg";
+  }
+
   return {
     artwork: artwork,
     title: title,
@@ -46,7 +50,7 @@ function generateSongs (songData) {
 
   var results = sorted.map(extractData);
 
-  console.log(results);
+  //console.log(results);
   return results;
 };
 

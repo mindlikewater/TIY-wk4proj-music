@@ -1,7 +1,7 @@
 import $ from 'jquery';
 
 import { getTracks } from "./soundcloud_api";
-import { songTemplate, resultsTemplate } from "./templates";
+import { songTemplate, resultsTemplate, playMusic } from "./templates";
 
 //variable holds location of the div, search-results from HTML page
 var resultsBox = $(".search-results");
@@ -10,6 +10,7 @@ var resultsBox = $(".search-results");
 function displayResults (results) {
   var playlist = results.map(songTemplate);
   var html = resultsTemplate(playlist);
+
   resultsBox.html(html);
 };
 
@@ -19,10 +20,9 @@ function getMusic (event) {
   var searchString = $("#search").val();
   var results = getTracks(searchString);
 
-  console.log(searchString);
   console.log(results);
   results.then(displayResults);
-}
+};
 
 //connects click event to the submit button on the webpage
 $("#submit").click(getMusic);

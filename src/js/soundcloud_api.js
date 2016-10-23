@@ -19,26 +19,24 @@ function getSongData (searchString) {
     url: `${SC_API}/tracks/`,
     data: {
       q: searchString,
-      limit: 4
+      limit: 20
     }
   });
 };
 
 function extractData (track) {
   var artwork = track.artwork_url;
-  var labelName = track.label_name;
-  var releaseYr = track.release_year;
   var title = track.title;
   var genre = track.genre;
-  var trackLink = track.uri;
+  var trackLink = track.stream_url;
+  var format = track.original_format;
 
   return {
     artwork: artwork,
-    label: labelName,
-    release: releaseYr,
     title: title,
     genre: genre,
-    trackLink: trackLink
+    trackLink: trackLink,
+    format: format
   };
 };
 
@@ -47,6 +45,8 @@ function generateSongs (songData) {
   var sorted = _.orderBy(songData, ['title']);
 
   var results = sorted.map(extractData);
+
+  console.log(results);
   return results;
 };
 

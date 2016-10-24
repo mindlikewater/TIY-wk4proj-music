@@ -26,15 +26,14 @@ function play (event) {
   var jukeboxHTML = `
     <audio controls="controls">
       <source src="${event.currentTarget.dataset.tracklink}?client_id=${SC_ID}" type="audio/${event.currentTarget.dataset.format}">
-    </audio>`;
-
-  var currentHTML = `
-    <div id="currentsong">${event.currentTarget.dataset.title}</div>`;
+    </audio>
+    <div class="currentsong">Now Playing:
+      <p>${event.currentTarget.dataset.title}</p>
+    </div>`;
 
   console.log(event.currentTarget.dataset);
   console.log(jukeboxHTML);
-  $(".controls").append(jukeboxHTML);
-  $(".currentsong").append(currentHTML);
+  $(".player").html(jukeboxHTML);
 };
 
 //export functions to main.js

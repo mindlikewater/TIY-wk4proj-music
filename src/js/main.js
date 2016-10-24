@@ -22,8 +22,6 @@ function getMusic (event) {
   var searchString = $("#search").val();
   var results = getTracks(searchString);
 
-  console.log(searchString);
-  console.log(results);
   results.then(displayResults);
 };
 

@@ -51,12 +51,18 @@ body {
       6px 6px #fe4902;
   }
 
- figcaption {
+  .player {
+    margin-top: 80px;
+  }
+
+ .currentsong {
    text-align: left;
    font-size: 14px;
    font-weight: bold;
    color: $indigo;
-   padding-bottom: 70px;
+   margin: 0px;
+   padding-bottom: 30px;
+   max-width: 45%;
  }
 
  #search {

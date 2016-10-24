@@ -1,55 +1,22 @@
-# Installation
+# Summary
 
-#### Prerequisites
+This is a music app I created using Soundcloud's API.  My project can be found here:
+[Tai's Music Search App](http://tiy-mikaelchen-wk4proj-soundcloud.surge.sh).
 
-Make sure you have an up to date installation of `npm`
-with `brew update` followed by either `brew install npm` or `brew upgrade npm`.
+# Objectives
 
-Then use npm to install the following apps with `npm install -g $APP_NAME`
-* `gulp-cli`
-* `surge`
+- Get a better understanding of how to read API documentation and make use of it
 
-Finally, I would strongly encourage you to install the `newapp` script from [here][newapp].
+- Become familiar with making AJAX requests and dealing with the response
 
-[newapp]: https://gist.github.com/kingcons/a25733c233faf10847cbb4ff557e6843
+- Learn how to handle empty values (for example, how to handle missing images?)
 
-# Usage
+- Learned how to add special effects (rotating button, hover effects)
 
-#### If you are using the `newapp` tool
+# Tools
 
-*NOTE:* If you do not use a lowercased project/folder name, the automatic deploy to surge with `npm run deploy` will fail as surge.sh always expects lowercased names.
+For this project, I used:
 
-1. Run `$ newapp template <project name>`
-2. Change in to your new project
-3. Initialize Git `$ git init`
-4. Build
+- Soundcloud API
 
-#### If you are NOT using the `newapp` tool
-
-1. Clone down this repo
-2. Rename and change into the project folder
-3. Remove `git` from it `$ rm -rf .git`
-4. Initialize Git `$ git init`
-5. Install the dependencies `$ npm install`
-6. Build 
-
-
-# Features
-
-This template features a couple different tools. First it utalizes both NPM and Gulp for different tasks.
-
-## Gulp Tasks
-
-All tasks are listed below, but ideally you will just need to run `gulp start` and be done with it.
-
-- `gulp start`: This is the primary task that will fire up the server and allow you to start building
-- `gulp server`: This will start a Browsersync server with live-reload
-- `gulp sass`: This will compile your SASS
-- `gulp browserify`: This will transpile your JS from ES6 to ES5
-- `gulp watch`: This will start a watcher for files
-
-## NPM Scripts
-
-- `npm run test`: This will launch Mocha in your terminal and run any tests
-- `npm run deploy`: This will deploy your application to Surge.sh for you
-- `npm run lint`: This will run ESLint on your `/src/js` folder
+- Lodash for sorting music files alphabetically
